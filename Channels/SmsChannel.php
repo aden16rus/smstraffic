@@ -30,7 +30,7 @@ class SmsChannel
     }
 
 
-    public function send($notifiable, TrainingStatus $notification)
+    public function send($notifiable, $notification)
     {
         $messageData = $notification->toSms($notifiable);
         $phone = str_replace([')','(','-',' ','+'], '', $messageData['recipient_phone']);
